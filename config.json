@@ -1,0 +1,6 @@
+{
+    "TargetMAC": "C0:1C:6A:76:B1:51",
+    "ThresholdRSSI": -90,
+    "CheckInterval": "3s",
+    "LockCommand": "loginctl lock-session"
+}
