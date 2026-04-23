@@ -1,0 +1,12 @@
+[Unit]
+Description=BlueTether Proximity Daemon
+After=bluetooth.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bluetether -config /etc/bluetether/config.json
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -33,6 +33,29 @@ BlueTether depends on the following tools:
    ```
    *Alternatively, you can build manually using `go build -o bluetether bluetether.go`.*
 
+## 📦 Packaging (RPM & DEB)
+This project uses [nFPM](https://nfpm.goreleaser.com/) to generate native Linux packages.
+
+### 1. Install nFPM
+If you have Go installed, you can install nFPM directly:
+```bash
+go install github.com/goreleaser/nfpm/v2/cmd/nfpm@latest
+```
+
+### 2. Update your PATH
+Ensure your Go binary directory is in your shell's PATH to run `nfpm` and the `Makefile` packaging targets:
+```bash
+# Add to your ~/.bashrc or ~/.zshrc
+export PATH=$PATH:$(go env GOPATH)/bin
+```
+*Don't forget to run `source ~/.bashrc` after updating.*
+
+### 3. Build Packages
+Once nFPM is installed and in your PATH, you can generate packages using:
+- `make deb`: Build Debian package.
+- `make rpm`: Build RPM package.
+- `make package`: Build both.
+
 ## 🛠 Makefile Targets
 The project includes a `Makefile` for convenience:
 - `make build`: Compiles the application.

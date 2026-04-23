@@ -1,0 +1,28 @@
+name: "bluetether"
+arch: "amd64"
+platform: "linux"
+version: "${VERSION:-1.0.0}"
+section: "default"
+priority: "extra"
+maintainer: "BlueTether Maintainers <maintainer@example.com>"
+description: "A lightweight Linux security and automation daemon for proximity-based actions."
+vendor: "BlueTether"
+homepage: "https://github.com/your-repo/BlueTether"
+license: "MIT"
+
+contents:
+  - src: "bluetether"
+    dst: "/usr/bin/bluetether"
+  - src: "bluetether.service"
+    dst: "/usr/lib/systemd/system/bluetether.service"
+  - src: "config.json"
+    dst: "/etc/bluetether/config.json"
+    type: "config"
+
+overrides:
+  deb:
+    depends:
+      - bluez
+  rpm:
+    depends:
+      - bluez
