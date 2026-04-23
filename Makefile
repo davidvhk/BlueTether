@@ -5,7 +5,7 @@ MAIN_FILE=bluetether.go
 MAKEFLAGS += --no-builtin-rules
 .SUFFIXES:
 
-.PHONY: all build run clean fmt vet help
+.PHONY: all build run clean fmt vet test help
 
 all: build
 
@@ -24,6 +24,9 @@ fmt:
 vet:
 	go vet ./...
 
+test:
+	go test -v ./...
+
 help:
 	@echo "Available targets:"
 	@echo "  all     : Build the binary (default)"
@@ -32,4 +35,5 @@ help:
 	@echo "  clean   : Remove the binary"
 	@echo "  fmt     : Run go fmt on the source code"
 	@echo "  vet     : Run go vet on the source code"
+	@echo "  test    : Run tests"
 	@echo "  help    : Show this help message"
