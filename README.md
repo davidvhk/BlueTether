@@ -29,8 +29,18 @@ BlueTether depends on the following tools:
    ```
 3. **Build the binary:**
    ```bash
-   go build -o bluetether bluetether.go
+   make build
    ```
+   *Alternatively, you can build manually using `go build -o bluetether bluetether.go`.*
+
+## 🛠 Makefile Targets
+The project includes a `Makefile` for convenience:
+- `make build`: Compiles the application.
+- `make run`: Builds and executes the application.
+- `make clean`: Removes the compiled binary.
+- `make fmt`: Formats the Go source code.
+- `make vet`: Runs Go static analysis.
+- `make help`: Shows available commands.
 
 ## 🤝 Pairing Your Device
 For BlueTether to work reliably, your device should be **paired** and **trusted** by your Linux machine. You can do this using the `bluetoothctl` interactive tool:
